@@ -154,6 +154,7 @@ for epoch in range(num_epochs):
         print(f'Early stopping triggered after {epoch+1} epochs without improvement.')
         break
 
+model.load_state_dict(torch.load("best_model.ckpt"))
 model.eval()
 with torch.no_grad():
     correct = 0
